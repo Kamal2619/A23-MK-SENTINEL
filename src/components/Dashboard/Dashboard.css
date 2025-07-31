@@ -1,0 +1,252 @@
+.dashboard-section {
+  padding: 6rem 0;
+  background: var(--dark-gradient);
+  position: relative;
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #000; /* Changed to black */
+}
+
+.dashboard-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #000; /* Changed to black */
+}
+
+.dashboard-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #000; /* Changed to black */
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.sensor-dashboard-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: #000; /* Make all text inside black */
+}
+
+.sensor-dashboard-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.sensor-dashboard-card:hover::before {
+  transform: scaleX(1);
+}
+
+.sensor-dashboard-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.sensor-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sensor-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #000; /* Icon color black */
+}
+
+.sensor-info {
+  flex: 1;
+}
+
+.sensor-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #000; /* Changed to black */
+  margin-bottom: 0.25rem;
+}
+
+.sensor-status-badge {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Badges keep their color for distinction, or you can make even these black */
+.sensor-status-badge.normal {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+}
+.sensor-status-badge.warning {
+  background: rgba(240, 147, 251, 0.2);
+  color: #f093fb;
+}
+.sensor-status-badge.good {
+  background: rgba(39, 202, 63, 0.2);
+  color: #27ca3f;
+}
+
+.sensor-reading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sensor-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000; /* Changed to black */
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.sensor-unit {
+  font-size: 1rem;
+  opacity: 0.7;
+  color: #000; /* Black (visible due to opacity) */
+}
+
+.sensor-trend {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sensor-trend.up {
+  color: #27ca3f;
+}
+.sensor-trend.down {
+  color: #ff5f56;
+}
+.sensor-trend.stable {
+  color: #ffbd2e;
+}
+
+.sensor-chart {
+  margin-bottom: 1rem;
+  height: 60px;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  height: 100%;
+}
+
+.chart-bar {
+  flex: 1;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  min-height: 4px;
+}
+
+.sensor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.last-updated {
+  font-size: 0.8rem;
+  color: #444; /* Darker gray for readability (or use #000) */
+}
+
+.sensor-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  color: #000; /* Make action button text black */
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.control-btn.primary {
+  background: var(--primary-gradient);
+  color: #fff;
+}
+
+.control-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.control-btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #000; /* Changed to black */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.control-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
